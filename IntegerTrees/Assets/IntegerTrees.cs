@@ -164,4 +164,17 @@ public class IntegerTrees : MonoBehaviour {
      GetComponent<KMBombModule>().HandleStrike();
    }
  }
+	
+	//twitch plays
+    #pragma warning disable 414
+    private readonly string TwitchHelpMessage = @"Use the command !{0} strike to strike";
+    #pragma warning restore 414
+
+	IEnumerator ProcessTwitchCommand(string command)
+	{
+		if (Regex.IsMatch(parameters[0], @"^\s*strike\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
+		{
+			GetComponent<KMBombModule>().HandleStrike();
+		}
+	}
 }
